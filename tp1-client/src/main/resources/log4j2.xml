@@ -1,0 +1,15 @@
+<configuration>
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO"> 
+            <AppenderRef ref="CONSOLE"/>
+        </Root>
+        <Logger name="com.upec.episen" level="INFO" additivity="false"> 
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+  </Loggers>
+</configuration>
