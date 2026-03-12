@@ -2,9 +2,9 @@ package fr.upec.episen;
 
 import java.io.InputStream;
 import java.net.DatagramPacket;
-import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.net.MulticastSocket;
 import java.net.NetworkInterface;
 import java.net.SocketAddress;
 import java.util.Properties;
@@ -25,7 +25,7 @@ public class Main {
         try {
             properties.load(is);
             final int PORT = Integer.parseInt(properties.getProperty("udp.server.port"));
-            DatagramSocket socket = new DatagramSocket(PORT);
+            MulticastSocket socket = new MulticastSocket(PORT);
             logger.info("tp3-client is listening for multicast messages on port {}", PORT);
             InetAddress group = InetAddress.getByName(properties.getProperty("udp.server.address"));
             SocketAddress groupAddress = new InetSocketAddress(group, PORT);
@@ -52,5 +52,3 @@ public class Main {
     }
 }
 
-
-// TODO: Multiocast server is not sending messages to multi-clients, rather to one client. To impl
