@@ -1,2 +1,5 @@
 fr\upec\espisen\service\Behaviour.class
+fr\upec\espisen\service\ServerRunningMBean.class
+fr\upec\espisen\service\ClientBehaviour.class
 fr\upec\espisen\Main.class
+fr\upec\espisen\service\ServerRunning.class
